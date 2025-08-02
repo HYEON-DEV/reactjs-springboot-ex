@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 
 @Builder
 @NoArgsConstructor
@@ -18,8 +19,8 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "Todo")
 public class TodoEntity {
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @GeneratedValue(generator = "uuid")
+    @UuidGenerator
     private String id;
     private String userId;
     private String title;
